@@ -8,19 +8,19 @@ import java.sql.Statement;
 public class Creat {
 	public Creat() throws SQLException {
 		Connection connection = null;
-		String driverName = "com.microsoft.sqlserver.jdbc.SQLServerDriver";// SQLÊı¾İ¿âÒıÇæ
-		String dbURL = "jdbc:sqlserver://localhost:1433;DatabaseName=zheng";// Êı¾İÔ´ £¡£¡£¡×¢ÒâÈô³öÏÖ¼ÓÔØ»òÕßÁ¬½ÓÊı¾İ¿âÊ§°ÜÒ»°ãÊÇÕâÀï³öÏÖÎÊÌâ
+		String driverName = "com.microsoft.sqlserver.jdbc.SQLServerDriver";// SQLæ•°æ®åº“å¼•æ“
+		String dbURL = "jdbc:sqlserver://localhost:1433;DatabaseName=zheng";// æ•°æ®æº ï¼ï¼ï¼æ³¨æ„è‹¥å‡ºç°åŠ è½½æˆ–è€…è¿æ¥æ•°æ®åº“å¤±è´¥ä¸€èˆ¬æ˜¯è¿™é‡Œå‡ºç°é—®é¢˜
 		String Name = "sa";
-		String Pwd = "86657148";
+		String Pwd = "**********";
 		try {
-			Class.forName(driverName);// ¼ÓÔØÊı¾İ¿âµÄÇı¶¯Àà
-			connection = DriverManager.getConnection(dbURL, Name, Pwd);// »ñÈ¡Á¬½Ó
-			System.out.println("Á¬½ÓÊı¾İ¿â³É¹¦");
+			Class.forName(driverName);// åŠ è½½æ•°æ®åº“çš„é©±åŠ¨ç±»
+			connection = DriverManager.getConnection(dbURL, Name, Pwd);// è·å–è¿æ¥
+			System.out.println("è¿æ¥æ•°æ®åº“æˆåŠŸ");
 		} catch (Exception e) {
 			e.printStackTrace();
-			System.out.println("Á¬½ÓÊ§°Ü");
+			System.out.println("è¿æ¥å¤±è´¥");
 		}
-		Statement stmt = null;// Ê¹ÓÃStatement½Ó¿ÚÔËĞĞsqlÓï¾ä
+		Statement stmt = null;// ä½¿ç”¨Statementæ¥å£è¿è¡Œsqlè¯­å¥
 		try {
 			stmt = connection.createStatement();
 		} catch (SQLException e) {
@@ -51,13 +51,13 @@ public class Creat {
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			} // ·µ»ØÖµ±íÊ¾ÔöÉ¾¸Ä¼¸ÌõÊı¾İ
-				// ´¦Àí½á¹û
+			} // è¿”å›å€¼è¡¨ç¤ºå¢åˆ æ”¹å‡ æ¡æ•°æ®
+				// å¤„ç†ç»“æœ
 			if (count > 0) {
-				System.out.println("¸üĞÂ³É¹¦!");
+				System.out.println("æ›´æ–°æˆåŠŸ!");
 			}
 		}
-		//¹Ø±ÕÊı¾İ¿â
+		//å…³é—­æ•°æ®åº“
 		connection.close();
 		stmt.close();
 		
